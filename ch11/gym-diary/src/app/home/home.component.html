@@ -1,0 +1,46 @@
+<div class="flex h-screen">
+  <aside class="w-1/6 bg-blue-500 text-white">
+    <nav class="mt-8">
+      <ul class="flex flex-col items-center space-y-4">
+        <li>
+          <a
+            routerLink="./diary"
+            class="flex items-center space-x-2 text-white"
+            data-cy="home-menu"
+          >
+            <span>Diary</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="./diary/entry"
+            class="flex items-center space-x-2 text-white"
+            data-cy="new-entry-menu"
+          >
+            <span>New Entry</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="./exercise"
+            class="flex items-center space-x-2 text-white"
+          >
+            <span>Exercise Registry</span>
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="logout()"
+            class="flex items-center space-x-2 text-white"
+            data-cy="logout-menu"
+          >
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="flex-1 bg-gray-200 p-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>

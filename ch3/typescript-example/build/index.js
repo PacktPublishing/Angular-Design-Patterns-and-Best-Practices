@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const any_1 = require("./basic_types/any");
+const array_1 = require("./basic_types/array");
+const classes_basic_1 = require("./basic_types/classes_basic");
+const interface_basic_1 = require("./basic_types/interface_basic");
+const primitive_1 = require("./basic_types/primitive");
+(0, primitive_1.primitive_example)();
+(0, array_1.array_example)();
+(0, any_1.any_example)();
+(0, classes_basic_1.basic_class)();
+(0, interface_basic_1.basic_interface)();

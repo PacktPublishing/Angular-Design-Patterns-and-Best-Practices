@@ -1,0 +1,45 @@
+{
+  "name": "gym-exercises",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --single-bundle  --bundle-styles  --keep-styles  --output-hashing=none",
+    "serve-mfe": "http-server dist/gym_exercises",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.2.6",
+    "@angular/common": "^16.2.6",
+    "@angular/compiler": "^16.2.6",
+    "@angular/core": "^16.2.6",
+    "@angular/elements": "^16.2.6",
+    "@angular/forms": "^16.2.6",
+    "@angular/platform-browser": "^16.2.6",
+    "@angular/platform-browser-dynamic": "^16.2.6",
+    "@angular/router": "^16.2.6",
+    "http-server": "^14.1.1",
+    "ngx-build-plus": "^16.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.2.3",
+    "@angular/cli": "~16.2.3",
+    "@angular/compiler-cli": "^16.2.6",
+    "@types/jasmine": "~4.3.0",
+    "autoprefixer": "^10.4.15",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
+    "typescript": "~5.1.3"
+  }
+}

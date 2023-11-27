@@ -1,0 +1,106 @@
+<div class="flex h-screen items-center justify-center bg-gray-200">
+  <form
+    [formGroup]="entryForm"
+    (ngSubmit)="newEntry()"
+    class="mx-auto max-w-sm rounded bg-gray-200 p-4"
+  >
+    <div class="mb-4">
+      <label for="date" class="mb-2 block font-bold text-gray-700">Date:</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        class="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow"
+        formControlName="date"
+      />
+      @if (entryForm.get('date')?.invalid && entryForm.get('date')?.touched) {
+      <div class="mt-1 text-red-500">Date is required.</div>
+      }
+    </div>
+    <div class="mb-4">
+      <label for="exercise" class="mb-2 block font-bold text-gray-700"
+        >Exercise:</label
+      >
+      <input
+        type="text"
+        id="exercise"
+        name="exercise"
+        class="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow"
+        formControlName="exercise"
+        (focus)="toggleSuggestions(true)"
+      />
+
+      @if (showSuggestions) {
+      <ul
+        class="absolute z-10 mt-2 w-auto rounded border border-gray-300 bg-white"
+      >
+        @for (suggestion of exercises$ | async; track suggestion.id) {
+        <li
+          class="cursor-pointer px-3 py-2 hover:bg-blue-500 hover:text-white"
+          (click)="selectExercise(suggestion.description)"
+        >
+          {{ suggestion.description }}
+        </li>
+        }
+      </ul>
+      } @if (entryForm.get('exercise')?.invalid &&
+      entryForm.get('exercise')?.touched) {
+      <div class="mt-1 text-red-500">Exercise is required.</div>
+      }
+    </div>
+    <div class="mb-4">
+      <label for="sets" class="mb-2 block font-bold text-gray-700">Sets:</label>
+      <input
+        type="number"
+        id="sets"
+        name="sets"
+        class="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow"
+        formControlName="sets"
+      />
+
+      @if (entryForm.get('sets')?.invalid && entryForm.get('sets')?.touched) {
+      <div class="mt-1 text-red-500">
+        Sets is required and must be a positive number.
+      </div>
+      } @if ( entryForm.get('sets')?.errors?.['isNotMultiple'] &&
+      entryForm.get('sets')?.touched) {
+      <div class="mt-1 text-red-500">
+        sets is required and must be multiple of 2.
+      </div>
+      }
+    </div>
+    <div class="mb-4">
+      <label for="reps" class="mb-2 block font-bold text-gray-700">Reps:</label>
+      <input
+        type="number"
+        id="reps"
+        name="reps"
+        class="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow"
+        formControlName="reps"
+      />
+      @if (entryForm.get('reps')?.invalid && entryForm.get('reps')?.touched) {
+      <div class="mt-1 text-red-500">
+        Reps is required and must be a positive number.
+      </div>
+      } @else if ( entryForm.get('reps')?.errors?.['isNotMultiple'] &&
+      entryForm.get('reps')?.touched) {
+      <div class="mt-1 text-red-500">
+        Reps is required and must be multiple of 3.
+      </div>
+      }
+    </div>
+    <div class="flex items-center justify-center">
+      <button
+        type="submit"
+        [disabled]="entryForm.invalid"
+        [class.opacity-50]="entryForm.invalid"
+        class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+        data-cy="submit"
+      >
+        Confirm
+      </button>
+    </div>
+  </form>
+</div>
+
+{{ entryForm.value | json }}

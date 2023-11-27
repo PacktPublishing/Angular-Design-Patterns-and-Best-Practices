@@ -1,0 +1,22 @@
+<div class="mb-4 flex items-center justify-between border-b bg-white p-4">
+  <div>
+    <span class="font-bold">Date:</span> {{ exerciseSet?.date | date }}<br />
+    <span class="font-bold">Exercise:</span> {{ exerciseSet?.exercise }}<br />
+    <span class="font-bold">Sets:</span> {{ exerciseSet?.sets }}<br />
+    <span class="font-bold">Reps:</span> {{ exerciseSet?.reps }}
+  </div>
+  <div class="flex items-center">
+    <button
+      class="mr-2 rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+      (click)="delete()"
+    >
+      Delete
+    </button>
+    <button
+      class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+      (click)="editEntry()"
+    >
+      Edit
+    </button>
+  </div>
+</div>

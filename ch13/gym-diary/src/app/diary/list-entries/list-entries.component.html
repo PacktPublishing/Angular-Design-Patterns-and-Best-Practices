@@ -1,0 +1,18 @@
+<section class="mb-8">
+  <h2 class="mb-4 text-xl font-bold">List of entries</h2>
+  <ul class="rounded border shadow">
+    @for (item of exerciseList(); track item.id) {
+    <li>
+      <app-entry-item
+        [exercise-set]="item"
+        (deleteEvent)="deleteEvent.emit($event)"
+        (editEvent)="editEvent.emit($event)"
+      />
+    </li>
+    } @empty {
+      <div>
+        No Items!
+      </div>
+    }
+  </ul>
+</section>

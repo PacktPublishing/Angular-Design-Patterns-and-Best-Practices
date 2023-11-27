@@ -1,0 +1,50 @@
+<div class="bg-gray-100 flex justify-center items-center min-h-screen">
+  <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Exercise List</h1>
+
+    <div class="max-h-40 overflow-y-auto mb-4">
+      <ul>
+        <li class="mb-2" *ngFor="let exercise of exerciseList$ | async">
+          {{ exercise.description }}
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="text-xl font-semibold mt-6 mb-2">Add Exercise</h2>
+    <form [formGroup]="entryForm" (ngSubmit)="newExercise()" class="space-y-2">
+      <div class="mb-4">
+        <label for="description" class="mb-2 block font-bold text-gray-700"
+          >Description:</label
+        >
+        <input
+          type="text"
+          id="description"
+          name="description"
+          class="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow"
+          formControlName="description"
+        />
+        <div
+          *ngIf="
+            entryForm.get('exercise')?.invalid &&
+            entryForm.get('exercise')?.touched
+          "
+          class="mt-1 text-red-500"
+        >
+          Exercise is required.
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <button
+          type="submit"
+          [disabled]="entryForm.invalid"
+          [class.opacity-50]="entryForm.invalid"
+          class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+        >
+          Confirm
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{{ entryForm.value | json }}
