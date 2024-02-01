@@ -4,7 +4,7 @@
 
 This is the code repository for [Angular Design Patterns and Best Practices](https://www.packtpub.com/product/angular-design-patterns-and-best-practices/9781837631971), published by Packt.
 
-**A web developer’s guide to effortless web app development, deployment, and scalability
+**A web developer’s guide to effortless web app development, deployment, and scalability**
 
 ## What is this book about?
 Single page applications (SPAs) have become the standard for most web experiences. Angular, with its batteries-included approach, has emerged as a powerful framework for simplifying the development of these interfaces by offering a comprehensive toolbox. This book guides you through the Angular ecosystem, uncovering invaluable design patterns and harnessing its essential features.
@@ -16,6 +16,8 @@ This book covers the following exciting features:
 * Simplify complex applications by integrating micro frontend and standalone components
 * Optimize the deployment process for top-notch application performance
 * Leverage Angular signals and standalone components to create performant applications
+
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1837631972) today!
 
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
