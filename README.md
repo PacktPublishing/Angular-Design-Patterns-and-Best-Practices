@@ -58,7 +58,7 @@ With the following software and hardware list you can run all code files present
 * Learning Angular, Fourth Edition [[Packt]](https://www.packtpub.com/product/learning-angular-fourth-edition/9781803240602) [[Amazon]](https://www.amazon.com/dp/1803240601)
 
 ## Errata 
-* Page 58, **styleUrls** _should be_ **styles** to accurately define the CSS styling of an Angular component.
+* Page 58, **style** _should be_ **styles** to accurately define the CSS styling of an Angular component.
 
 ## Get to Know the Author
 **Alvaro Camillo Neto**
